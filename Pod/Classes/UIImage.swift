@@ -20,7 +20,7 @@ extension UIImage {
             UIColor.blackColor().setFill()
         }
         UIRectFill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         return image
@@ -34,7 +34,7 @@ extension UIImage {
         keyWindow?.layer.renderInContext(context!)
         let capturedScreen = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return capturedScreen;
+        return capturedScreen!;
     }
     
     public func applyBlurWithRadius(blurRadius: CGFloat, tintColor: UIColor?, saturationDeltaFactor: CGFloat, maskImage: UIImage? = nil) -> UIImage? {
